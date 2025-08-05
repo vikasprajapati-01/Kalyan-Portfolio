@@ -54,7 +54,7 @@ const About: React.FC = () => {
             <h3>My Story</h3>
             <div className="about-story-text">
               <p>
-                With over 5 years of professional experience in video editing, I've had the privilege 
+                With over 5 years of professional experience in video editing, I&apos;ve had the privilege 
                 of working on diverse projects ranging from corporate documentaries to music videos, 
                 each presenting unique challenges and creative opportunities.
               </p>

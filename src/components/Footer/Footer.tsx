@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Heart } from 'lucide-react';
+import { Mail, MapPin, Linkedin } from 'lucide-react';
 import './Footer.css';
 
 const Footer: React.FC = () => {

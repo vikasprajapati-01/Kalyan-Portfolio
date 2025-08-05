@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Clock, Tag } from 'lucide-react';
+import Image from 'next/image';
 import Card from '@/ui/Card/Card';
 import VideoPlayer from '@/ui/VideoPlayer/VideoPlayer';
 import { categories, videos } from '@/data/video';
@@ -197,14 +198,19 @@ const VideoCard: React.FC<VideoCardProps> = ({
           ) : video.videoUrl.includes('drive.google.com') ? (
             <div className="video-card-gdrive-thumbnail-wrapper">
               {getGoogleDriveThumbnailUrl(video.videoUrl) ? (
-                <img 
-                  src={getGoogleDriveThumbnailUrl(video.videoUrl) || ''} 
+                <Image 
+                  src={getGoogleDriveThumbnailUrl(video.videoUrl) || ''}
                   alt={video.title}
                   className="video-card-gdrive-thumbnail"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   onError={(e) => {
                     // Fallback if thumbnail loading fails
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement?.classList.add('video-card-gdrive-placeholder');
+                    const target = e.target as HTMLImageElement;
+                    if (target) {
+                      target.style.display = 'none';
+                      target.parentElement?.classList.add('video-card-gdrive-placeholder');
+                    }
                   }}
                 />
               ) : (

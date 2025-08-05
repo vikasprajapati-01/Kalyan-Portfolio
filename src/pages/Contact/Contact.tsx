@@ -77,10 +77,10 @@ const Contact: React.FC = () => {
           className="contact-header"
         >
           <h2 className="contact-title">
-            <span className="contact-title-gradient">Let's Work Together</span>
+            <span className="contact-title-gradient">Let&apos;s Work Together</span>
           </h2>
           <p className="contact-subtitle">
-            Ready to bring your vision to life? I'm always excited to collaborate 
+            Ready to bring your vision to life? I&apos;m always excited to collaborate 
             on new projects and explore creative opportunities.
           </p>
         </motion.div>

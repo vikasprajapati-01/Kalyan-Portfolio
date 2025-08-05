@@ -18,11 +18,6 @@ const Hero: React.FC = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleScrollToContact = () => {
-    const element = document.querySelector('#contact');
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   // Predefined positions to avoid hydration mismatch
   const particlePositions = [
     { x: 25, y: 20, color: '#0548C6' },
