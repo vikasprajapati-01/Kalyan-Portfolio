@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Button from '@/ui/Button/Button';
 import { ChevronDown, Play } from 'lucide-react';
 import { useIsClient } from '@/hooks/clientHook';
-import './hero.css';
+import './Hero.css';
 
 import Kalyan from '../../../public/kalyan1.jpg'
 

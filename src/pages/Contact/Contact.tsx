@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle } from 'lucide-react';
 import Card from '@/ui/Card/Card';
 import Button from '@/ui/Button/Button';
-import './contact.css';
+import './Contact.css';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
