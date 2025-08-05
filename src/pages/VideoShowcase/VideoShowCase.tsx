@@ -9,6 +9,37 @@ import { categories, videos } from '@/data/video';
 import { Video } from '@/types';
 import './VideoShowcase.css';
 
+// Helper function to extract Google Drive file ID from URL
+const getGoogleDriveFileId = (url: string): string | null => {
+  if (!url.includes('drive.google.com')) {
+    return null;
+  }
+  
+  // Regular Google Drive URL
+  if (url.includes('/file/d/')) {
+    const fileId = url.split('/file/d/')[1].split('/')[0];
+    return fileId;
+  }
+  
+  // Shared folder URL
+  if (url.includes('drive.google.com/open')) {
+    const urlObj = new URL(url);
+    const fileId = urlObj.searchParams.get('id');
+    return fileId;
+  }
+  
+  return null;
+};
+
+// Helper function to get Google Drive thumbnail URL
+const getGoogleDriveThumbnailUrl = (url: string): string | null => {
+  const fileId = getGoogleDriveFileId(url);
+  if (!fileId) return null;
+  
+  // Google Drive thumbnails use this format
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+};
+
 const VideoShowcase: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
@@ -155,7 +186,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
       <div>
         {/* Thumbnail */}
         <div className="video-card-thumbnail">
-          {video.videoUrl.endsWith('.mp4') ? (
+          {video.videoUrl.endsWith('.mp4') || video.videoUrl.startsWith('/') ? (
             <video 
               src={video.videoUrl} 
               className="video-card-video-thumbnail"
@@ -163,6 +194,27 @@ const VideoCard: React.FC<VideoCardProps> = ({
               playsInline
               preload="metadata"
             />
+          ) : video.videoUrl.includes('drive.google.com') ? (
+            <div className="video-card-gdrive-thumbnail-wrapper">
+              {getGoogleDriveThumbnailUrl(video.videoUrl) ? (
+                <img 
+                  src={getGoogleDriveThumbnailUrl(video.videoUrl) || ''} 
+                  alt={video.title}
+                  className="video-card-gdrive-thumbnail"
+                  onError={(e) => {
+                    // Fallback if thumbnail loading fails
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement?.classList.add('video-card-gdrive-placeholder');
+                  }}
+                />
+              ) : (
+                <Play size={48} className="video-card-placeholder-icon" />
+              )}
+              <div className="video-card-gdrive-info">
+                <p className="video-card-placeholder-title">{video.title}</p>
+                <p className="video-card-placeholder-category">{video.category}</p>
+              </div>
+            </div>
           ) : (
             <div className="video-card-placeholder">
               <Play size={48} className="video-card-placeholder-icon" />
