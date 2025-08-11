@@ -272,6 +272,16 @@
   color: var(--primary);
 }
 
+@media (max-width: 480px) {
+  .video-card-title {
+    font-size: 1.125rem;
+  }
+  
+  .video-card-content {
+    padding: 1rem;
+  }
+}
+
 .video-card-description {
   color: var(--text-secondary);
   margin-bottom: 1rem;

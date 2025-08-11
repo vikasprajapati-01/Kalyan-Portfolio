@@ -28,7 +28,6 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setIsSubmitting(false);
@@ -43,26 +42,26 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'vikas.editor@example.com',
-      href: 'mailto:vikas.editor@example.com',
+      value: 'kalyan.23aiml@cambridge.edu.in',
+      href: 'mailto:kalyan.23aiml@cambridge.edu.in',
     },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
-    },
+    // {
+    //   icon: Phone,
+    //   label: 'Phone',
+    //   value: '+1 (555) 123-4567',
+    //   href: 'tel:+15551234567',
+    // },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'New York, NY',
+      value: 'Bangalore, IN',
       href: '#',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/vikasprajapati-01',
-      href: 'https://linkedin.com/in/vikasprajapati-01',
+      value: 'linkedin.com/in/kalyan-v',
+      href: 'https://in.linkedin.com/in/kalyan-v-65a423226',
     },
   ];
 

@@ -187,18 +187,26 @@ const VideoCard: React.FC<VideoCardProps> = ({
       <div>
         {/* Thumbnail */}
         <div className="video-card-thumbnail">
-          {video.videoUrl.endsWith('.mp4') || video.videoUrl.startsWith('/') ? (
-            <video 
-              src={video.videoUrl} 
+          {video.thumbnail ? (
+            <Image
+              src={video.thumbnail}
+              alt={video.title}
+              className="video-card-gdrive-thumbnail"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : video.videoUrl.endsWith('.mp4') || video.videoUrl.startsWith('/') ? (
+            <video
+              src={video.videoUrl}
               className="video-card-video-thumbnail"
-              muted 
+              muted
               playsInline
               preload="metadata"
             />
           ) : video.videoUrl.includes('drive.google.com') ? (
             <div className="video-card-gdrive-thumbnail-wrapper">
               {getGoogleDriveThumbnailUrl(video.videoUrl) ? (
-                <Image 
+                <Image
                   src={getGoogleDriveThumbnailUrl(video.videoUrl) || ''}
                   alt={video.title}
                   className="video-card-gdrive-thumbnail"

@@ -100,3 +100,15 @@
 .nav-mobile-nav-button:hover {
   color: var(--primary);
 }
+
+@media (max-width: 480px) {
+  .nav-mobile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-mobile-nav-button {
+    padding: 1rem 0;
+  }
+}

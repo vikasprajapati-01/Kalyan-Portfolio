@@ -4,9 +4,9 @@ import React from 'react';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import Hero from '@/pages/Hero/Hero';
-// import About from '@/pages/About/About';
+import About from '@/pages/About/About';
 import VideoShowcase from '@/pages/VideoShowcase/VideoShowCase';
-// import Contact from '@/pages/Contact/Contact';
+import Contact from '@/pages/Contact/Contact';
 import PageTransition from './Animation';
 
 export default function Home() {
@@ -15,9 +15,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        {/* <About /> */}
+        <About />
         <VideoShowcase />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <Footer />
     </PageTransition>

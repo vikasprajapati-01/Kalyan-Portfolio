@@ -8,9 +8,9 @@ import './Navigation.css';
 
 const navigationItems: NavigationItem[] = [
   { label: 'Home', href: '#home' },
-  // { label: 'About', href: '#about' },
+  { label: 'About', href: '#about' },
   { label: 'Videos', href: '#videos' },
-  // { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 const Navigation: React.FC = () => {

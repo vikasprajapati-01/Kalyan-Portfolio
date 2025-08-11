@@ -8,19 +8,21 @@ import './About.css';
 
 const About: React.FC = () => {
   const skills = [
-    { name: 'Adobe Premiere Pro', level: 95 },
-    { name: 'After Effects', level: 90 },
-    { name: 'DaVinci Resolve', level: 85 },
-    { name: 'Final Cut Pro', level: 80 },
-    { name: 'Motion Graphics', level: 88 },
-    { name: 'Color Grading', level: 92 },
+    { name: 'Adobe Premiere Pro' },
+    { name: 'After Effects' },
+    { name: 'DaVinci Resolve' },
+    { name: 'Final Cut Pro' },
+    { name: 'Motion Graphics' },
+    { name: 'Color Grading' },
+    { name: 'CapCut' },
+    { name: 'VN' },
   ];
 
   const achievements = [
-    { icon: Award, number: '50+', label: 'Projects Completed' },
-    { icon: Clock, number: '5+', label: 'Years Experience' },
-    { icon: Users, number: '30+', label: 'Happy Clients' },
-    { icon: Zap, number: '15+', label: 'Awards Won' },
+    { icon: Award, number: '15+', label: 'Projects Completed' },
+    { icon: Clock, number: '4+', label: 'Years Experience' },
+    { icon: Users, number: '12+', label: 'Happy Clients' },
+    { icon: Zap, number: '4+', label: 'Awards Won' },
   ];
 
   return (
@@ -54,14 +56,14 @@ const About: React.FC = () => {
             <h3>My Story</h3>
             <div className="about-story-text">
               <p>
-                With over 5 years of professional experience in video editing, I&apos;ve had the privilege 
+                With over 4 years of professional experience in video editing, I&apos;ve had the privilege 
                 of working on diverse projects ranging from corporate documentaries to music videos, 
                 each presenting unique challenges and creative opportunities.
               </p>
               <p>
                 My journey began with a passion for storytelling and evolved into a professional 
                 career focused on crafting compelling narratives through the art of editing. 
-                I believe that great editing is invisible – it serves the story while enhancing 
+                I believe that great editing is invisible &mdash; it serves the story while enhancing 
                 the emotional impact of every frame.
               </p>
               <p>
@@ -81,20 +83,10 @@ const About: React.FC = () => {
           >
             <h3>Skills & Expertise</h3>
             <div className="about-skills-list">
-              {skills.map((skill, index) => (
+              {skills.map((skill) => (
                 <div key={skill.name} className="about-skill-item">
                   <div className="about-skill-header">
                     <span className="about-skill-name">{skill.name}</span>
-                    <span className="about-skill-percentage">{skill.level}%</span>
-                  </div>
-                  <div className="about-skill-bar">
-                    <motion.div
-                      className="about-skill-progress"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                    />
                   </div>
                 </div>
               ))}

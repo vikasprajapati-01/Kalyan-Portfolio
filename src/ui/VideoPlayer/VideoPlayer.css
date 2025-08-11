@@ -30,6 +30,17 @@
   transition: color 0.3s ease;
 }
 
+@media (max-width: 640px) {
+  .video-overlay {
+    padding: 0.5rem;
+  }
+  
+  .video-close-button {
+    top: -2.5rem;
+    right: 0;
+  }
+}
+
 .video-close-button:hover {
   color: #d1d5db;
 }
@@ -75,4 +86,20 @@
   gap: 1rem;
   font-size: 0.875rem;
   color: #9ca3af;
+}
+
+@media (max-width: 480px) {
+  .video-title {
+    font-size: 1.125rem;
+  }
+  
+  .video-description {
+    font-size: 0.875rem;
+  }
+  
+  .video-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+  }
 }
