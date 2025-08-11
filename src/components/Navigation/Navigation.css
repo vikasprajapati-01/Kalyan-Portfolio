@@ -50,6 +50,7 @@
   cursor: pointer;
   padding: 0.5rem;
   transition: color 0.3s ease;
+  margin-right: -0.5rem;
 }
 
 .nav-mobile-button:hover {
