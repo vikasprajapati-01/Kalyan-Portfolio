@@ -20,7 +20,7 @@ const About: React.FC = () => {
 
   const achievements = [
     { icon: Award, number: '15+', label: 'Projects Completed' },
-    { icon: Clock, number: '4+', label: 'Years Experience' },
+    { icon: Clock, number: '7+', label: 'Years Experience' },
     { icon: Users, number: '12+', label: 'Happy Clients' },
     { icon: Zap, number: '4+', label: 'Awards Won' },
   ];
@@ -56,19 +56,13 @@ const About: React.FC = () => {
             <h3>My Story</h3>
             <div className="about-story-text">
               <p>
-                With over 4 years of professional experience in video editing, I&apos;ve had the privilege 
-                of working on diverse projects ranging from corporate documentaries to music videos, 
-                each presenting unique challenges and creative opportunities.
+                My editing journey began back in 2018, when I first started experimenting with creating and sharing content on YouTube and social media. What started with cubing videos quickly grew into client projects and personal creative challenges, giving me hands-on experience with different formats and storytelling approaches.
               </p>
               <p>
-                My journey began with a passion for storytelling and evolved into a professional 
-                career focused on crafting compelling narratives through the art of editing. 
-                I believe that great editing is invisible &mdash; it serves the story while enhancing 
-                the emotional impact of every frame.
+                With over 7 years of professional editing experience, I&apos;ve worked on a wide range of projects &mdash; from corporate documentaries to music videos &mdash; each bringing unique challenges and opportunities to refine my craft. Alongside this, I&apos;ve consistently explored content creation on my own platforms, shaping my ability to connect with audiences and experiment with creative styles.
               </p>
               <p>
-                Currently seeking new opportunities to bring creative visions to life and 
-                collaborate with teams who value quality, creativity, and attention to detail.
+                For me, editing is more than just arranging clips &mdash; it&apos;s about building emotion, rhythm, and narrative flow that makes the story resonate. I&apos;m currently looking to collaborate with creative teams that value quality, originality, and storytelling impact.
               </p>
             </div>
           </motion.div>

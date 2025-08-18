@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Bangalore, IN',
+      value: 'Bangalore, India',
       href: '#',
     },
     {
